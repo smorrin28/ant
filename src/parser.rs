@@ -26,7 +26,10 @@ fn get_command_enum(command: String) -> Command {
     } else if cmd == "END" && arg.is_none() {
         return Command::END;
     }
-    let n = arg.unwrap().parse::<usize>().expect("Argument must be a number!");
+    let n = arg
+        .unwrap()
+        .parse::<i32>()
+        .expect("Argument must be a number!");
 
     match cmd {
         "DLOAD" => Command::DLOAD(n),
